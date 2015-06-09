@@ -1,0 +1,64 @@
+<div class="jumbotron" ng-controller="MainCtrl">
+  <h1>'Allo, 'Allo!</h1>
+  <p class="lead">
+    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
+    Always a pleasure scaffolding your apps.
+  </p>
+  <p><a class="btn btn-lg btn-success" ng-href="#/">Awww Yeah!<span class="glyphicon glyphicon-ok"></span></a></p>
+</div>
+
+<div class="row" ng-controller="sharedCtrl">
+        <div>
+        <div class="col-lg-3"  ng-repeat="stock in stocks" >
+            <div id="" class="panel panel-primary">
+              <div class="panel-heading">
+                    <h3 id="symbol_0" class="panel-title">Stock Name: {{stock.name}}</h3>
+              </div>
+              <div class="panel-body">
+                  <b>Current Price:</b> <span class="label label-success">{{stock.l}}</span>
+                  </br>
+                  <b>Exchange:</b> <span class="label label-default">{{stock.exchange}}</span>
+                  </br>
+                  <b>Symbol:</b> <span class="label label-primary">{{stock.symbol}}</span>
+              </div>
+            </div> <!--end of panel-->
+            </div><!-- end of col-lg-3-->
+        </div>
+
+   <div class="col-lg-3" >
+            <div class="panel panel-primary">
+              <div class="panel-heading">                    
+             <input type="text" ng-model="stock" placeholder="Enter a Stock Name" typeahead="stockSymbol as stockSymbol.Name for stockSymbol in lookupStocks($viewValue)" class="form-control">
+<!--              <input type="text" ng-model="enteredSymbol" placeholder="Enter a Stock" typeahead="stock as stock.Name for stock in getStocks($viewValue)" typeahead-loading="Gettingstocks" class="form-control">-->
+                  <pre>Model: {{stock | json}}</pre>
+              </div>
+              <div   class="panel-body" style="align-content:center">
+                 <button id="btnAddNewStock" ng-click="getStockQuote()" type="button" class="btn btn-default">
+                          <span class="glyphicon glyphicon-plus"></span> Add
+                   </button>                    
+              </div>
+
+            </div> <!--end of panel-->
+            </div><!-- end of col-lg-3-->
+</div>
+
+
+
+
+<div class="row marketing">
+  <h4>HTML5 Boilerplate</h4>
+  <p>
+    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+  </p>
+
+  <h4>Angular</h4>
+  <p>
+    AngularJS is a toolset for building the framework most suited to your application development.
+  </p>
+
+  <h4>Karma</h4>
+  <p>Spectacular Test Runner for JavaScript.</p>
+</div>
+
+
+
